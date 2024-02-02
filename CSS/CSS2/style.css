@@ -1,0 +1,114 @@
+
+body {
+        background-color:#fc3;
+        color: #000;
+}
+
+body#idClassPage {
+        background-color: white;
+}
+
+h1 {
+        font-size: 50px;
+        font-family: Helvetica, Arial, sans-serif;
+}
+
+h2 {
+        font-size: 30px;
+        font-family: Georgia, times, serif;
+}
+
+p {
+        font-size: 18px;
+        font-style: italic;
+}
+
+ol {
+        margin: 20px;
+        padding: 20px;
+        color: white;
+}
+/* Styles for the ID & Class Lecture */
+
+/* h1#main-title but we dont have to be specific since we are defeating the purpose of the id. */
+
+#main-title {
+        color: aqua;
+        background:#353535;
+        margin: 20px;
+        font-size: 18px;
+}
+
+/* h2.section_header but we dont have to be specific since we are defeating the purpose of the class. With this way, it will select both h2 and h3. */
+
+.section-header {
+        color: olive;
+        border: solid 1px pink;
+        padding: 40px 20px 10px;
+        text-align: center;
+        font-size: 1.2em;  
+        font-weight: normal;
+}
+
+/* Style for the Descendant Selector lecture */
+
+.primary-box {
+        background-color: white;
+        border: solid 10px #333;
+        padding: 20px;
+}
+
+.primary-box h2 {
+        font-family: Helvetica, Arial, sans-serif;
+        color: red;
+}
+
+.primary-box p {
+        font-style: normal;
+        font-size: 20px;
+}
+
+.primary-box p em {
+        color:darkgoldenrod;
+}
+
+.secondary-box {
+        background-color: gray;
+        color:black;
+        border: solid 10px green;
+}
+
+.secondary-box p {
+        color:white;
+        background-color: darkorchid;
+}
+
+.secondary-box h2 {
+        color:blue;
+        font-style:oblique;
+}
+
+/* Styles for the Grouping Selector Lecture */
+
+#mainContainer {
+        width: 960px;
+        margin: 0 auto;
+}
+
+.primary-box, .secondary-box {
+        margin: 30px 20px;
+}
+
+/* You can do it seperately but it would be inefficient to do so grouping comes in this point. */
+
+h1, h2, h3, h4, h5, h6 {
+        text-align: center;
+        border-bottom: solid 3px red;
+        padding: 0 0 10px;
+    
+}
+
+.inside-box {
+        border: solid 1px black;
+        text-align: center;
+}

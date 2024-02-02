@@ -1,0 +1,49 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+    padding: 0;
+}
+
+#container {
+  margin-top: 20px; /* İstenilen boşluk ayarla */
+    text-align: center;
+}
+
+.main-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-item {
+  display: flex;
+}
+
+.link-item {
+  text-align: center;
+  margin-right: 80px; /* İstenilen boşluk ayarla */
+  text-decoration: none;
+  color: #333;
+  display: block;
+    margin: 170px auto 0;
+}
+
+.link-item img {
+  max-width: 100px; /* İstenilen genişlik ayarla */
+  display: block;
+  margin-right: 60px/* Image altındaki boşluk ayarla */
+}
+
+.link-item span {
+  display: block;
+    margin-top: 5px;
+    margin-right: 60px;
+    text-align: center;
+}
+
+input[type="search"] {
+    height: 60px;
+    width: 60px;
+}

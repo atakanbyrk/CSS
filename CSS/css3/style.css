@@ -1,0 +1,270 @@
+/* style.css 
+
+Normally we would do this for the reset. However, this is too simple since there are lots of elements and a lot of things that would be nice to reset so that everything is consistent and all the browsers because browser treats CSS a little differently. So in normalize css you can just download and copy paste the things to the normalize.css. This makes all the browsers render the elements more consistently and in line with modern standards.
+
+* {
+margin 0;
+padding 0;
+}
+*/
+
+#box {
+    background: red;
+    height: 200px;
+    width: 200px;
+    margin: 40px auto;
+    
+
+/* when you add padding, you change the size of the box since your box getting big in right-left and up-down. If you want your box still 200x200 then you need the consider the padding and in this case height and width should be 100 so that size of the box can be 200x200. It is kind of annoying and CSS3 gives you the ability to choose value balled "border box" which basically keeps everything. */    
+    box-sizing: border-box;
+    border-radius: 100px;
+    line-height: 200px;
+    text-align: center;
+    /*  border-bottom-left-radius: 100px; 
+        border-top-right-radius: 100px;
+        border-bottom-right-radius: 100px;
+     */
+    
+    /* Not all CSS3 properties work in all browsers. You can use browser prefixes for browser to renders it properly. Webkit for chrome, noz for mozilla browsers like firefox etc.
+    */
+    -webkit-border-radius: 100px;
+    -noz-border-radius: 100px;
+}
+
+
+/* Colors */
+
+body#colors {
+    background: rgba(25,52,84,1); /* You can use RGBA(Red-Green-Blue-Alpha) and HSLA(Hue-Saturation-Lightness-Alpha) colors. Alpha= how transparent the opacity the color is. 1 equals to 100% so fully visible and 0 is fully transparable. */
+    color: white;
+}
+
+#colors #container {
+    width: 600px;
+    margin: 40, auto;
+    padding: 40px;
+    box-sizing: border-box;
+    background: rgba(255,255,255,0.1);
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    
+    
+    /* background: hsla(120, 100%, 50%, 0.1); */
+}
+
+.box1, .box2, .box3 {
+    height: 200px;
+    width: 200px;
+    margin: 20px;
+    line-height: 200px;
+    text-align: center;
+}
+
+#colors .box1 {
+
+    background: linear-gradient(blue, green); /* the default ,s top to bottom and if you want to change that === background: linear-gradient(to bottom left or to left or be more specific and write like 120 deg ,blue, green)
+    */
+}
+
+#colors .box2 {
+    background: linear-gradient(46deg, black, yellow);
+
+    
+}
+
+#colors .box3 {
+    background: radial-gradient(green, yellow, blue);
+}
+    
+/* Shadows */
+    
+#shadows #container {
+    width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    box-sizing: border-box;
+    background: #fc3;
+    /* box-shadow: horizontal vertical blur spread color */
+    box-shadow: -10px 10px 5px 10px #333;
+}
+
+/* text-shadow: horizontal vertical blur color */
+#shadows h1.heading1 {
+    color: white;
+    text-shadow: 2px 2px black;
+}
+
+#shadows h1.heading2 {
+    color: white;
+    text-shadow: 0px 5px 2px rgba(150, 10, 200,0.6);
+}
+
+#shadows h1.heading3 {
+    color: white;
+    text-shadow: 0 2px 5px blue, 0px 2px 10px red;
+}
+
+/* Columns */
+
+#three-columns {
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+    
+    -webkit-column-gap: 40px;
+    -moz-column-gap: 40px;
+    column-gap: 40px;
+    
+    -webkit-column-rule-style: solid;
+    column-rule-style: solid;
+    /* column-rule-style: dahsed; */
+    
+    column-rule-width: 1px;
+
+    column-rule-color: #fc3;
+}
+
+/* Animation & Transitions */
+
+#animations #box1, #box2, #box3 {
+    background: red;
+    color: white;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    text-align: center;
+    line-height: 200px;
+    border-radius: 20px;    
+}
+
+#box2 {
+    margin-top: 30px;
+}
+
+@keyframes box1 {
+    from { 
+        background-color: red; 
+        border-radius: 20px;
+        top: 0px; left: 0px;
+        opacity: 100%;
+    }
+    
+    to {
+        background-color: black;
+        border-radius: 100px;
+        top: 100px; left: 100px;
+        opacity: 0;
+    }
+}
+
+#animations #box1 {
+    position: relative;
+    
+    animation-name: box1;
+    animation-duration: 10s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 2s;
+    animation-iteration-count: 3; /* it will repeat 3times then stop. */
+    animation-direction: alternate; 
+    
+    /* shorthand of the above
+    animation: box1 10s ease-in-out 2s 3 alternate; */
+}
+
+#box2 {
+    position: relative;
+    background: blue;
+    margin: 0;
+}
+
+#box2:hover {
+    background: red;
+    width: 300px;
+    height: 300px;   
+    transition: all 4s;
+    transition-timing-function:  ease-in;
+}
+
+#box3 {
+    position: relative;
+    background: blue;
+    margin-left: 0px;
+    margin-top: 10px;
+}
+
+#box3:hover {
+    background: red;
+    width: 300px;
+    height: 300px;   
+    transition: width 8s, height 2s, background 20s;
+}
+
+/* Buttons */
+
+@keyframes buttonAnimation {
+    from { padding: 10px 20px; font-size: inherit;}
+    to   { padding:15px 30px; font-size: 24px;}
+}
+
+
+.button, .button-alt-button {
+    display: inline-block;
+    background: #fc3;
+    background: linear-gradient(#fc3, #f91);
+    border: solid 1px #999;
+    border-radius: 5px;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px;
+    text-decoration: none;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+}
+
+.button:hover {
+    border-color: #888;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.9);
+    background: #f91;
+    background: linear-gradient(to top, #fc3, #f91);
+    animation-name: buttonAnimation;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.button-alt-button:hover {
+    border-color: #888;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.9);
+    background: #f91;
+    animation-name: buttonAnimation;
+    animation-duration: 1s;
+}
+
+.button:active {
+    position: relative;
+    top: 1px;
+}
+
+
+.button-alt-button:active {
+    top: 1px;
+}   
+
+/* orbit Animation */
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+#universe {
+    background: black;
+    background: -webkit-radial-gradient(#555, #000);
+    background: radial-gradient(#555, #000);
+}
+
+#stars {
+    height: 100%;
+    width: 100%;
+    background: url(images/stars.png);
+}
